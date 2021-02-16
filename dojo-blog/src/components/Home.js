@@ -13,17 +13,13 @@ const Home = () => {
       setBlogs(newBlogs);
     };
 
-    const [name, setName] = useState('mario');
-
     useEffect(() => {
         console.log('hello')
-    }, [name]);
+    }, []);
   
     return (
       <div className="home">
         <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
-        <button onClick={() => setName('luigi')}>change name</button>
-        <p>{name}</p>
       </div>
     );
 }
