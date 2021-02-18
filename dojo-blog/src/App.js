@@ -1,15 +1,26 @@
 import React from "react";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Create from "./components/Create";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Home />
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
